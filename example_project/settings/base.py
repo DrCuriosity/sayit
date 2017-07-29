@@ -23,9 +23,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sayit-example-project',
-        'USER': '',
-        'PASSWORD': '',
+        'NAME': 'sayit',
+        'USER': 'sayit',
+        'PASSWORD': 'sayit',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -134,6 +134,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'django_extensions',
     'haystack',
     'django_select2',
     'django_bleach',
