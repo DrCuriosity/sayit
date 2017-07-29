@@ -20,6 +20,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+# TODO: Script to generate real credentials on production deploy.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
