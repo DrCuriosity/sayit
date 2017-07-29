@@ -12,7 +12,7 @@ from django.db import models
 from django.db.models import Q
 from django.utils import timezone
 from django.utils.html import strip_tags
-from django.template.defaultfilters import timesince
+from django.template.defaultfilters import timesince, slugify
 from django.conf import settings
 from django.core.files import File
 from django.core.exceptions import ValidationError
@@ -26,7 +26,7 @@ from instances.models import InstanceMixin, InstanceManager
 from speeches.utils.audio import AudioHelper
 from speeches.utils.text import url_to_unicode
 
-from popolo.models import Person
+from popolo.models import Person, Membership
 from sluggable.fields import SluggableField
 from sluggable.models import Slug as SlugModel
 
@@ -172,6 +172,15 @@ class Speaker(InstanceMixin, Person):
     def colour(self):
         id = ('%s' % self.person_ptr_id).encode()
         return hashlib.sha1(id).hexdigest()[:6]
+
+    @property
+    def party_colour(self):
+        """Return a slugified party name for CSS styling."""
+        try:
+            membership = Membership.objects.get(person__name=self.name)
+            return slugify(membership.organization.name)
+        except:
+            return None
 
     @models.permalink
     def get_absolute_url(self):
