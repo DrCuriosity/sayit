@@ -3,6 +3,13 @@
 {% load speech_utils %}
 {% load thumbnail %}
 
+
+{% if speech.id == 242 %}
+<div class="speech-wrapper">
+    <iframe width="653" height="367" src="https://www.youtube.com/embed/99_1m_IEYRY" frameborder="0" allowfullscreen></iframe>
+</div>
+{% endif %}
+
 {% if not noli %}
 <li id="s{{ speech.id }}" class="speech {% if result.object %}speech--search-result{% endif %} {% if speech.speaker and not nospeaker and not standalone %}speech--with-portrait{% endif %} speech--{{ speech.type }} speech--border"
 {% if speech.speaker.colour %} style="border-left-color: #{{ speech.speaker.colour }};"{% endif %}>
