@@ -182,6 +182,16 @@ class Speaker(InstanceMixin, Person):
         except:
             return None
 
+    @property
+    def party_name(self):
+        """Return full party name for speaker."""
+        try:
+            membership = Membership.objects.get(person__name=self.name)
+            return membership.organization.name
+        except:
+            return None
+
+
     @models.permalink
     def get_absolute_url(self):
         return ('speeches:speaker-view', (), {'slug': self.slug})

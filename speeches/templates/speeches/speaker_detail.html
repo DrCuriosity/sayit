@@ -30,9 +30,11 @@
       <img src="{% if speaker.image_cache %}{{ speaker.image_cache|thumbnail_url:'speaker-rectangle' }}{% elif speaker.image %}{{ speaker.image }}{% else %}{% static "speeches/i/a.png" %}{% endif %}"
           {% if speaker.party_colour is None %}style="border-color #{{ speaker.colour }}; background-color: #{{ speaker.colour }};"{% endif %}
           class="speaker-portrait speaker-portrait--left speaker-portrait--large round-image{% if speaker.party_colour %} party-{{ speaker.party_colour }}{% endif %}"
-          alt="Headshot of {{ speaker.name|escape}}" />
+          alt="Headshot of {{ speaker.name|escape}}"
+          title="{{ speaker }}{% if speaker.party_name %}, {{ speaker.party_name }}{% endif %}" />
       <div class="speaker-information">
         <h1>{{ speaker.name }}</h1>
+        {% if speaker.party_name %}<h2>{{ speaker.party_name }}</h2>{% endif %}
         {% if speaker.summary %}
           <p class="person-summary"> {{ speaker.summary }}
           </p>

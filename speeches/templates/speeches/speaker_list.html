@@ -29,7 +29,8 @@
 
                     <img src="{% if speaker.image_cache %}{{ speaker.image_cache|thumbnail_url:'speaker-thumb' }}{% elif speaker.image %}{{ speaker.image }}{% else %}{% static "speeches/i/a.png" %}{% endif %}"
                          {% if speaker.party_colour is None %}style="border-color: #{{ speaker.colour }} dashed; background-color: #{{ speaker.colour }};"{% endif %}
-                         alt=""
+                         alt="Headshot of {{ speaker.name|escape}}"
+                         title="{{ speaker }}{% if speaker.party_name %}, {{ speaker.party_name }}{% endif %}"
                          class="speaker-card__portrait speaker-portrait round-image speaker-portrait--small{% if speaker.party_colour %} party-{{ speaker.party_colour }}{% endif %}">
                     <span class="speaker-card__name">{{ speaker }}</span>
 
