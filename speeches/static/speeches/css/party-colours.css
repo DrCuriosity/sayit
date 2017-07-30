@@ -1,34 +1,35 @@
-.party-national {
-  border-color: blue;
-  background-color: blue;
+.party-national-party {
+  border-color: #095988;
+  background-color: #095988;
 }
 
-.party-labour {
-  border-color: red;
-  background-color: red;
+.party-labour-party {
+  border-color: #d82c20;
+  background-color: #d82c20;
 }
 
-.party-green {
-  border-color: green;
-  background-color: green;
+.party-green-party {
+  border-color: #00c760;
+  background-color: #00c760;
 }
 
-.party-nz-first {
-  border-color: black;
-  background-color: black;
+.party-nz-first-party {
+  border-color: #999;
+  background-color: #999;
 }
 
-.party-act {
-  border-color: yellow;
-  background-color: yellow;
+.party-act-party {
+  border-color: #ffda37;
+  background-color: #ffda37;
 }
 
-.party-maori {
-  border-color: #400;
-  background-color: #400;
+.party-maori-party {
+  border-color: #000;
+  background-color: #C00;
+  border-style: dotted;
 }
 
-.party-united-future {
+.party-united-future-party {
   border-color: purple;
   background-color: purple;
 }
