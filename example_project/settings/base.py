@@ -143,6 +143,7 @@ INSTALLED_APPS = [
     'instances',
     'speeches',
     'easy_thumbnails',
+    'rest_framework'
 ]
 
 try:
