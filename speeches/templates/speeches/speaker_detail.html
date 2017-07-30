@@ -34,7 +34,11 @@
           title="{{ speaker }}{% if speaker.party_name %}, {{ speaker.party_name }}{% endif %}" />
       <div class="speaker-information">
         <h1>{{ speaker.name }}</h1>
-        {% if speaker.party_name %}<h2>{{ speaker.party_name }}</h2>{% endif %}
+        {% if speaker.party_name %}<h2>
+          {% if speaker.party_url %}<a href="{{speaker.party_url}}" title="External link to {{speaker.party_name}} website">{% endif %}
+          {{ speaker.party_name }}
+          {% if speaker.party_url %}<small>&#x1f517;</small></a>{% endif %}
+        </h2>{% endif %}
         {% if speaker.summary %}
           <p class="person-summary"> {{ speaker.summary }}
           </p>

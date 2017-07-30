@@ -191,6 +191,16 @@ class Speaker(InstanceMixin, Person):
         except:
             return None
 
+    @property
+    def party_url(self):
+        """Return a party website URL, the the link exists."""
+        try:
+            membership = Membership.objects.get(person__name=self.name)
+            url = membership.organization.links.filter(note="Party website").first().url
+            return url
+        except:
+            return None
+
 
     @models.permalink
     def get_absolute_url(self):
